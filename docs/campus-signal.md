@@ -1,0 +1,13 @@
+# Connected campus workflow signals
+
+The main homepage (`/`) now opens with the connected campus hero, also retained on `/home-lab` for previewing. The previous homepage's interactive dashboard hero now opens `/services`, with its exploration links targeting the service details. The existing content below both main heroes remains in place; preview-only labels and noindex metadata are not carried onto the homepage.
+
+The overview illustrates a connected work process along every existing purple path. Lavender-white signals travel inward from Attendance, Team communication, Staff records and the outer courtyard connection. The Aspio hub softly glows, then signals travel outward to all three buildings. A brief glow at each entrance acknowledges arrival. This is illustrative marketing motion, not a live check-in or transmission indicator.
+
+`src/components/home/CampusSignal.tsx` traces the original 1672 × 941 artwork coordinates in SVG. It shares the overview plane's dimensions, so the effect scales with the image rather than with viewport coordinates. A ten-second CSS cycle separates receive, process, distribute and arrival stages, with small route delays and a quiet interval before repetition. Incoming and outgoing signals use the same paths in opposite directions. No new image, video, dependency or per-frame JavaScript loop is required.
+
+The effect hides during camera travel, in close-ups, when artwork fails, and when scene motion is disabled. Intersection observation and document visibility pause it offscreen or in a hidden tab. Reduced-motion preferences remove the effect entirely. The decorative SVG is hidden from assistive technology and cannot intercept pointer or keyboard input.
+
+The existing camera timeline, depth shader, artwork and examples are unchanged. Moving the hero does not replace or alter the user's motion fix.
+
+Run `node scripts/verify-campus-signal.mjs` against the dev server, or pass a local production URL as its first argument. It covers 320, 390, 768, 1440 and 1920px alignment, all four incoming paths, three outgoing paths with reversed movement, staged hub/entrance illumination, offscreen pausing, motion-off, preference changes, all three features' travel/return and failed-artwork recovery. New review captures use the `artifacts/campus-workflow-` prefix; earlier single-path captures are retained. The full camera regression suite remains `node scripts/verify-campus-sequences.mjs`. Both now default to `/`; pass `/home-lab` as a second argument after the base URL to check the retained preview. `npm run verify:browser` covers the moved Services dashboard, other page content, navigation and mocked contact flows.

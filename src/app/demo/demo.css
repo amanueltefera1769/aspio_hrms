@@ -1,0 +1,61 @@
+/* Request a demo: pitch and form first, then what to expect. */
+.demo-hero { position:relative; overflow:hidden; background:radial-gradient(ellipse at 80% 10%, #ecdcff 0, transparent 55%), linear-gradient(180deg, #fbf8ff, #fff 70%); border-bottom:1px solid #efe6f6; }
+.demo-hero-inner { display:grid; grid-template-columns:minmax(0, .95fr) minmax(0, 1.05fr); grid-template-areas:"copy form" "agenda form"; gap:34px 80px; align-items:start; padding-block:70px 90px; }
+.demo-copy { grid-area:copy; }
+.hr-home .demo-copy h1 { margin:22px 0 20px; font-size:clamp(48px, 5.4vw, 80px); line-height:1.02; }
+.hr-home .demo-copy > p { max-width:500px; color:#6f6480; font-size:18px; line-height:1.65; }
+.demo-copy .hr-kicker,.demo-steps .hr-kicker { font-size:12px; }
+.demo-notes { display:flex; flex-wrap:wrap; gap:10px; margin:26px 0 0; padding:0; list-style:none; }
+.demo-notes li { display:inline-flex; align-items:center; gap:8px; padding:8px 13px; border:1px solid #e8dcf3; border-radius:30px; background:#fff; color:#4f405d; font-size:13px; }
+.demo-notes svg { color:#7900ec; }
+.demo-form { grid-area:form; position:relative; z-index:1; padding:32px; border-color:#e6dbef; border-radius:22px; box-shadow:0 30px 70px -40px #5f2e8766, 0 0 0 6px #ffffffa8; }
+.demo-form .contact-form header h2 { font-size:30px; }
+.demo-agenda { grid-area:agenda; padding:26px 26px 22px; border:1px solid #ece2f5; border-radius:20px; background:#ffffffd9; }
+.hr-home .demo-agenda h2 { margin:0 0 16px; font-size:20px; font-weight:600; letter-spacing:-.03em; }
+.demo-agenda ol { display:grid; gap:4px; margin:0; padding:0; list-style:none; }
+.demo-agenda li { display:flex; align-items:flex-start; gap:14px; padding:11px 0; border-top:1px solid #f2ebf8; }
+.demo-agenda li:first-child { border-top:0; padding-top:0; }
+.demo-agenda b { display:block; color:#2c2138; font-size:15px; font-weight:600; }
+.demo-agenda small { display:block; margin-top:3px; color:#7a6d89; font-size:14px; line-height:1.5; }
+.hr-home .demo-agenda-note { margin:12px 0 0; color:#8a7b99; font-size:13px; }
+.demo-icon { display:grid; place-items:center; flex-shrink:0; width:38px; height:38px; border-radius:11px; background:#f1e6ff; color:#7900ec; }
+.demo-after { display:grid; grid-template-columns:minmax(0, 1.2fr) minmax(0, .8fr); gap:70px; align-items:start; padding-block:90px 110px; }
+.hr-home .demo-steps h2 { margin:18px 0 34px; font-size:clamp(40px, 4vw, 58px); line-height:1.05; }
+.demo-steps ol { display:grid; gap:0; margin:0; padding:0; list-style:none; counter-reset:none; }
+.demo-steps li { position:relative; display:flex; gap:22px; padding:0 0 30px; }
+.demo-steps li:not(:last-child)::before { content:""; position:absolute; left:23px; top:50px; bottom:4px; border-left:1.5px dashed #d3bdee; }
+.demo-steps li > span { display:grid; place-items:center; flex-shrink:0; width:48px; height:48px; border-radius:50%; background:#7900ec; color:#fff; font-size:15px; font-weight:600; box-shadow:0 0 0 6px #7900ec14; }
+.demo-steps b { display:block; margin-top:4px; color:#24192e; font-size:20px; font-weight:600; letter-spacing:-.03em; }
+.hr-home .demo-steps p { margin:6px 0 0; max-width:480px; color:#6f6480; font-size:16px; line-height:1.65; }
+.demo-ready { position:sticky; top:120px; padding:28px; border:1px solid #ece2f5; border-radius:22px; background:#f8f3fe; }
+.demo-ready h3 { margin:0 0 16px; font-size:20px; font-weight:600; letter-spacing:-.03em; }
+.demo-ready ul { display:grid; gap:12px; margin:0; padding:0; list-style:none; }
+.demo-ready li { display:flex; align-items:flex-start; gap:10px; color:#3e3149; font-size:15px; line-height:1.5; }
+.demo-ready li svg { flex-shrink:0; margin-top:2px; padding:3px; width:22px; height:22px; border-radius:50%; background:#fff; color:#7900ec; }
+.demo-email { display:flex; align-items:center; gap:14px; margin-top:24px; padding-top:20px; border-top:1px solid #e8dcf3; }
+.demo-email small { display:block; color:#8a7b99; font-size:12px; }
+.demo-email a { display:inline-flex; align-items:center; gap:6px; min-height:32px; color:#7900ec; font-size:15px; font-weight:600; word-break:break-all; }
+.demo-email a:hover { text-decoration:underline; }
+@media (max-width: 1100px) { .demo-hero-inner { gap:30px 44px; }.demo-form { padding:26px; } }
+@media (max-width: 900px) {
+  .demo-hero-inner { grid-template-columns:1fr; grid-template-areas:"copy" "form" "agenda"; padding-block:48px 64px; }
+  .demo-after { grid-template-columns:1fr; gap:40px; padding-block:64px 80px; }
+  .demo-ready { position:static; }
+}
+@media (max-width: 650px) {
+  .hr-home .demo-copy h1 { font-size:clamp(40px, 11vw, 52px); }
+  .hr-home .demo-copy > p { font-size:16px; }
+  .demo-notes li { font-size:12px; }
+  .demo-form { padding:20px 16px; border-radius:18px; }
+  .demo-agenda,.demo-ready { padding:20px; }
+  .demo-steps b { font-size:18px; }
+  .hr-home .demo-steps p { font-size:15px; }
+}
+/* Readable form text on this page; the shared form stays as it is elsewhere. */
+.demo-form .contact-form header p { font-size:14px; }
+.demo-form .form-grid label { font-size:13px; }
+.demo-form .form-grid label > small { font-size:11px; }
+.demo-form .form-grid input,.demo-form .form-grid select,.demo-form .form-grid textarea { font-size:15px; }
+.demo-form .consent { font-size:13px; }
+.demo-form .contact-form footer > span { font-size:12px; }
+.demo-form .contact-form .button { font-size:14px; min-height:48px; }
